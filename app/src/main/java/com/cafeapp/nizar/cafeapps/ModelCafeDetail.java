@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by irfan on 02/08/16.
+ * Created by irfan on 03/08/16.
  */
-public class ModelCafe implements Serializable {
+public class ModelCafeDetail implements Serializable {
     public boolean STATUS;
     public int STATUS_CODE;
     public MESSAGE MESSAGE;
@@ -27,11 +27,11 @@ public class ModelCafe implements Serializable {
         this.STATUS_CODE = STATUS_CODE;
     }
 
-    public ModelCafe.MESSAGE getMESSAGE() {
+    public ModelCafeDetail.MESSAGE getMESSAGE() {
         return MESSAGE;
     }
 
-    public void setMESSAGE(ModelCafe.MESSAGE MESSAGE) {
+    public void setMESSAGE(ModelCafeDetail.MESSAGE MESSAGE) {
         this.MESSAGE = MESSAGE;
     }
 
@@ -56,40 +56,22 @@ public class ModelCafe implements Serializable {
         }
     }
 
-    public List<DATA> DATA;
+    public DATA DATA;
 
-    public List<ModelCafe.DATA> getDATA() {
+    public DATA getDATA() {
         return DATA;
     }
 
-    public void setDATA(List<ModelCafe.DATA> DATA) {
+    public void setDATA(DATA DATA) {
         this.DATA = DATA;
     }
 
-    public class DATA implements Serializable {
-        public String id;
-        public String rating;
+    public class DATA {
         public String nama;
-        public String jenis;
-        public String alamat;
-        public String url_foto;
         public LOCATION location;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getRating() {
-            return rating;
-        }
-
-        public void setRating(String rating) {
-            this.rating = rating;
-        }
+        public String alamat;
+        public String deskripsi;
+        public List<FASILITAS> fasilitas;
 
         public String getNama() {
             return nama;
@@ -99,12 +81,12 @@ public class ModelCafe implements Serializable {
             this.nama = nama;
         }
 
-        public String getJenis() {
-            return jenis;
+        public LOCATION getLocation() {
+            return location;
         }
 
-        public void setJenis(String jenis) {
-            this.jenis = jenis;
+        public void setLocation(LOCATION location) {
+            this.location = location;
         }
 
         public String getAlamat() {
@@ -115,20 +97,20 @@ public class ModelCafe implements Serializable {
             this.alamat = alamat;
         }
 
-        public String getUrl_foto() {
-            return url_foto;
+        public String getDeskripsi() {
+            return deskripsi;
         }
 
-        public void setUrl_foto(String url_foto) {
-            this.url_foto = url_foto;
+        public void setDeskripsi(String deskripsi) {
+            this.deskripsi = deskripsi;
         }
 
-        public LOCATION getLocation() {
-            return location;
+        public List<FASILITAS> getFasilitas() {
+            return fasilitas;
         }
 
-        public void setLocation(LOCATION location) {
-            this.location = location;
+        public void setFasilitas(List<FASILITAS> fasilitas) {
+            this.fasilitas = fasilitas;
         }
     }
 
@@ -150,6 +132,18 @@ public class ModelCafe implements Serializable {
 
         public void setLongitude(List<String> longitude) {
             this.longitude = longitude;
+        }
+    }
+
+    public class FASILITAS {
+        public String nama;
+
+        public String getNama() {
+            return nama;
+        }
+
+        public void setNama(String nama) {
+            this.nama = nama;
         }
     }
 }

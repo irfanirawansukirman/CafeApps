@@ -21,5 +21,5 @@ public interface CafeService {
      * get detail list
      */
     @GET("/apicafe/public/list/{id}")
-    Call<List<ModelCafe>> getDataList(@Path("id") String id);
+    Call<ModelCafeDetail> getDataList(@Path("id") String id);
 }
